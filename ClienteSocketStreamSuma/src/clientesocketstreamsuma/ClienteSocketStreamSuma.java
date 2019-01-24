@@ -26,7 +26,7 @@ public class ClienteSocketStreamSuma {
         clienteSocket.connect(addr);
 
         OutputStream output = clienteSocket.getOutputStream();
-        String mensaje = "1 1 1 1 1";
+        String mensaje = "1 1 1 1 ";
         output.write(mensaje.getBytes());
 
         recibido = true;
@@ -34,7 +34,7 @@ public class ClienteSocketStreamSuma {
             InputStream input = clienteSocket.getInputStream();
             System.out.println("Conexión recibida");
 
-            byte[] mensajeRe = new byte[20];
+            byte[] mensajeRe = new byte[30];
             int leer = input.read(mensajeRe);
             System.out.println(new String(mensajeRe));
 
